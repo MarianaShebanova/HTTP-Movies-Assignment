@@ -46,6 +46,9 @@ const EditMovie = (props) => {
         setMovie({ ...movie, metascore: e.target.value });
     };
 
+    const handleChangesStars = e => {
+        setMovie({ ...movie, stars: [e.target.value]});
+    }
     return (
         <div className="list">
             <h1>Movie</h1>
@@ -75,6 +78,13 @@ const EditMovie = (props) => {
                 value={movie.metascore}
                 placeholder="Metascore"
                 onChange={handleChangesMetascore}
+            />
+            <input
+                className="input"
+                type="text"
+                name="stars"
+                value={movie.stars}
+                onChange={handleChangesStars}
             />
             <button className="submitButton" onClick={() => {
                 editMovie();
